@@ -1,36 +1,137 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter';
+ background-color: #eee7e7;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.logo{
-  background-image: url('components/images/OfficialLogo.png');
-  background-repeat: no-repeat;
-  background-size: 50% auto;
-}
-
-/* .logo-size{
- width: 30px;
- height: 20px;
-
-} */
-
 .slider-container{
-
-  background-color: #D3D3D3;
-  width: 10%;
-  height: 1000px;
+  background-color:  #4a3a3a;
+  width: 25%;
+  height: 669px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.create-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 500px;
+  margin-top: -430px;
+}
+
+.text-header{
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.btn-slider{
+  border-radius: 11px;
+  width: 101px;
+  height: 38px;
+  background-color: #d4c9c9;
+  margin-left: 97px;
+}
+
+.icons-slider{
+  color: #000000;
+  width: 32px;
+  height: 39px;
+  margin-left: 66px;
+  margin-bottom: -43px;
+}
+
+.input-question{
+  position: absolute;
+  margin-left: 174px;
+  margin-top: 59px;
+  width: 530px;
+  height: 31px;
+  left: 409px;
+  top: 79px;
+  background: #FFFFFF;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.text-header-question{
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 30px;
+  margin-top: -293px;
+  margin-left: -61px;
+}
+
+
+.text-header-list{
+
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 30px;
+  margin-left: 13px;
+  margin-top: -106px
+}
+
+
+.div-container{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.div-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 708px;
+  margin-top: -300px;
+}
+
+.btn-Add{
+  width: 102px;
+  height: 22px;
+  background-color: #d4c9c9;
+  border-radius: 5px;
+
+} 
+
+.List{
+  background-color: #d4c9c9;
+  padding: 1.2em 5em;
+  border-radius: 5px;
+  width: 413px;
+  cursor: pointer;
+  overflow: hidden;
+  height: 14px;
+  margin-bottom: 17px;
+  margin-left: -144px;
+}
+
+.div-btn-add{
+  position: absolute;
+  top: 214px;
+  right: 462px;
+}
+
+
+.icons-create{
+  color: #000000;
+  width: 16px;
+  height: 18px;
+  margin-left: 198px;
+  margin-bottom: -4px;
+  margin-right: -251px;
+}
+
+.btn-submit{
+    margin-top: 190px;
+     width: 102px;
+    height: 22px;
+    background-color: #d4c9c9;
+    border-radius: 5px;
+    margin-left: -28px;
+
+
 
 }
