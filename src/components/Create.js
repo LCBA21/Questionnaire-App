@@ -32,6 +32,11 @@ const Create = () => {
     setNewTask(''); // Clear the input field
   };
 
+    const deleteTask = (index) => {
+    const updatedTodoList = todoList.filter((_, i) => i !== index);
+    setTodoList(updatedTodoList);
+  };
+
   return (
     <div className='div-center'>
       <div >
@@ -63,7 +68,7 @@ const Create = () => {
           
           <FaTrash
           className='icons-create'
-
+          onClick={() => deleteTask(index)}
           />
           </div>;
         })}
