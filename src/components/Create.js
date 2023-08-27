@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import {FaPen} from 'react-icons/fa'
-import {FaTrash} from 'react-icons/fa'
+import React, { useEffect } from 'react';
+import { FaPen, FaTrash } from 'react-icons/fa';
+import { useState } from 'react';
 
-
-
-
-const Create = () => {
-  const [todoList, setTodoList] = useState([]);
+const Create = ({ todoList, setTodoList }) => {
   const [newTask, setNewTask] = useState('');
 
   useEffect(() => {
@@ -15,7 +11,7 @@ const Create = () => {
     if (storedTodoList) {
       setTodoList(JSON.parse(storedTodoList));
     }
-  }, []);
+  }, [setTodoList]);
 
   useEffect(() => {
     // Save updated tasks to localStorage whenever todoList changes
@@ -32,15 +28,15 @@ const Create = () => {
     setNewTask(''); // Clear the input field
   };
 
-    const deleteTask = (index) => {
+  const deleteTask = (index) => {
     const updatedTodoList = todoList.filter((_, i) => i !== index);
     setTodoList(updatedTodoList);
   };
 
   return (
     <div className='div-center'>
-      <div >
-      <p className='text-header-question'>Create a Questionnaire</p>
+      <div>
+        <p className='text-header-question'>Create a Questionnaire</p>
       </div>
 
       <div>
@@ -52,26 +48,17 @@ const Create = () => {
       </div>
 
       <div className='div-header-list'>
-      <p className='text-header-list'>List of Questions</p>
+        <p className='text-header-list'>List of Questions</p>
       </div>
 
-
       <div className=''>
-        {
-        
-        todoList.map((task, index) => {
-          return <div className='List' key={index}>{task} 
-          <FaPen
-          className='icons-create'
-
-          />
-          
-          <FaTrash
-          className='icons-create'
-          onClick={() => deleteTask(index)}
-          />
-          </div>;
-        })}
+        {todoList.map((task, index) => (
+          <div className='List' key={index}>
+            {task}
+            <FaPen className='icons-create' />
+            <FaTrash className='icons-create' onClick={() => deleteTask(index)} />
+          </div>
+        ))}
       </div>
     </div>
   );
