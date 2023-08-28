@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaPen, FaTrash } from 'react-icons/fa';
-import { useState } from 'react';
+
 
 
 const Questionnaire = ({ todoList }) => {
@@ -10,12 +9,24 @@ const Questionnaire = ({ todoList }) => {
         <p className='text-header-question'>Questionnaire</p>
 
 
-          <div className=''>
+    <div>
         {todoList.map((task, index) => (
           <div className='List' key={index}>
             {task}
-            <FaPen className='icons-create' />
-            <FaTrash className='icons-create'  />
+            <div className='radio-inline'>
+
+            <label >
+            <input type="radio" name="optradio" />Agree
+            </label>
+          
+            <label >
+            <input type="radio" name="optradio"/>Neutral
+            </label>
+            
+            <label >
+            <input type="radio" name="optradio"/>Disagree
+            </label>
+            </div>
           </div>
         ))}
       </div>
