@@ -11,6 +11,14 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
+.logo{
+
+  background-image: url('/src/components/OfficialLogo.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
 
 .create-container{
   display: flex;
@@ -59,7 +67,7 @@ body {
   font-weight: 900;
   font-size: 30px;
   margin-top: -293px;
-  margin-left: -61px;
+  margin-left: 4px;
 }
 
 
@@ -93,25 +101,25 @@ body {
   height: 22px;
   background-color: #d4c9c9;
   border-radius: 5px;
-
 } 
 
 .List{
   background-color: #d4c9c9;
   padding: 1.2em 5em;
   border-radius: 5px;
-  width: 413px;
+  width: 511px;
   cursor: pointer;
   overflow: hidden;
   height: 14px;
-  margin-bottom: 17px;
-  margin-left: -144px;
+  margin-bottom: 27px;
+  margin-left: -265px;
 }
+
 
 .div-btn-add{
   position: absolute;
   top: 214px;
-  right: 462px;
+  left: 775px;
 }
 
 
@@ -130,8 +138,49 @@ body {
     height: 22px;
     background-color: #d4c9c9;
     border-radius: 5px;
-    margin-left: -28px;
-
-
-
+    margin-left: 70px;
 }
+
+.radio-inline{
+  margin-top: -20px;
+  margin-left: 300px;
+}
+
+
+.div-stats-conatiner {
+  display: flex;
+  gap: 58px;
+  margin-top: -505px;
+  margin-left: 482px;
+  margin-right: 45px;
+}
+
+.stats {
+  background-color: #d4c9c9;
+  padding: 1.2em 5em;
+  border-radius: 5px;
+  width: 102px;
+  cursor: pointer;
+  overflow: hidden;
+  height: 201px;
+}
+
+
+
+/* 
+.logo1{
+  margin-top: 100px;
+} 
+
+.spanOne{
+font-family: 'Inter';
+color: red;
+font-weight: 900;
+}
+.spanTwo{
+  font-family: 'Inter';
+  color: #FFFFFF;
+  font-weight: 900;
+} */
+
+
