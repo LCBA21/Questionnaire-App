@@ -3,7 +3,12 @@ import React from 'react'
 const Dashboard = () => {
   return (
     <div>
-            <h3>Dashboard</h3>
+     <div className='div-stats-conatiner'>
+    <div className='stats'></div>
+    <div className='stats'></div>
+    <div className='stats'></div>
+    <div className='stats'></div>
+    </div>   
     </div>
   )
 }
