@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {FaPlusSquare} from 'react-icons/fa'
 import {FaClipboard} from 'react-icons/fa'
 import {FaQuestionCircle} from 'react-icons/fa'
+import logo from '../components/OfficialLogo2.png'
 
 
 
@@ -10,11 +11,11 @@ import {FaQuestionCircle} from 'react-icons/fa'
 const Slider = () => {
   return (
     <div>
-        
-        <div >
-             <img  className='logo'  src='components/images/OfficialLogo.png'/>     
-        </div>
+
+
       <div className='slider-container'>
+      <img className='resize-logo' src={logo}/>
+
          
         <Link to={`/`}>
           <div>
