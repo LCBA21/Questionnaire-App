@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-const Questionnaire = ({ todoList }) => {
+const Questionnaire = ({ todoList,setAgreeNum,setDisagreeNum,setNeutralNum,selected,setSelected, }) => {
   const [radioValues, setRadioValues] = useState({});
   const [submitted, setSubmitted] = useState(false);
+
 
   useEffect(() => {
     const storedResponses = localStorage.getItem('questionnaireResponses');
@@ -18,33 +19,39 @@ const Questionnaire = ({ todoList }) => {
     }
   }, []);
 
+
   //radio buttons event start
   const handleRadioChange = (index, value) => {
-    setRadioValues((prevValues) => {
-      const updatedValues = { ...prevValues };
-  
-      if (updatedValues[index] === value) {
-        updatedValues[index] = null; 
-      } else {
-        updatedValues[index] = value;
-      }
-  
-      return updatedValues;
-    });
+    setRadioValues(prevValues => ({
+      ...prevValues,
+      [index]: value,
+    }));
+
+    setSelected(value); // Update the selected value
+
+    // Increment the corresponding response count dynamically
+    if (value === 'agree') {
+      setAgreeNum(prevCount => prevCount + 1);
+    } else if (value === 'disagree') {
+      setDisagreeNum(prevCount => prevCount + 1);
+    } else if (value === 'neutral') {
+      setNeutralNum(prevCount => prevCount + 1);
+    }
   };
     //radio buttons event end
 
   
 
-  const handleSubmit = () => {
-    const radioWithQuestions = todoList.map((task, index) => ({
-      question: task,
-      value: radioValues[index] || null,
-    }));
-
-    localStorage.setItem('questionnaireResponses', JSON.stringify(radioWithQuestions));
-    setSubmitted(true);
-  };
+    const handleSubmit = () => {
+      const radioWithQuestions = todoList.map((task, index) => ({
+        question: task,
+        value: radioValues[index] || null,
+      }));
+  
+      localStorage.setItem('questionnaireResponses', JSON.stringify(radioWithQuestions));
+      setSubmitted(true);
+    };
+  
 
   return (
     <div className='div-center'>
@@ -79,6 +86,8 @@ const Questionnaire = ({ todoList }) => {
                 Neutral 
                 
                 {/* value of number of clicks/increment ({radioValues['neutral'] || 0}) */}
+                
+
               </label>
 
               <label>
@@ -104,7 +113,11 @@ const Questionnaire = ({ todoList }) => {
 
         {submitted && (
           <div className='responses-count'>
-            <h3>Number of Questions: {todoList.length}</h3>
+            <div className="flex-dashboard">
+              <div> <p>Number of Questions:</p></div>
+              <div className="div-stats-total"><h3>{todoList.length}</h3></div>
+            </div>
+    
             <h3>Responses Count:</h3>
             <ul>
               <li>Agree: {radioValues['agree'] || 0}</li>
