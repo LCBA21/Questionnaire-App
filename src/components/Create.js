@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 const Create = ({ todoList, setTodoList }) => {
   const [newTask, setNewTask] = useState('');
-
+  const [editIndex, setEditIndex] = useState(-1); 
+  
   useEffect(() => {
     // Load stored tasks from localStorage on component mount
     const storedTodoList = localStorage.getItem('todoList');
@@ -32,6 +33,31 @@ const Create = ({ todoList, setTodoList }) => {
     const updatedTodoList = todoList.filter((_, i) => i !== index);
     setTodoList(updatedTodoList);
   };
+  
+// edit start
+
+  const startEditing = (index) => {
+    setEditIndex(index);
+  };
+  
+  const cancelEditing = () => {
+    setEditIndex(-1);
+  };
+  
+  const saveEditing = (index, newText) => {
+    const updatedTodoList = [...todoList];
+    updatedTodoList[index] = newText;
+    setTodoList(updatedTodoList);
+    setEditIndex(-1);
+  };
+
+  const editTask = (index, newText) => {
+    const updatedTodoList = [...todoList];
+    updatedTodoList[index] = newText;
+    setTodoList(updatedTodoList);
+  };
+  // edit end
+  
 
   return (
     <div className='div-center'>
@@ -52,13 +78,27 @@ const Create = ({ todoList, setTodoList }) => {
       </div>
 
       <div className=''>
-        {todoList.map((task, index) => (
-          <div className='List' key={index}>
-            {task}
-            <FaPen className='icons-create' />
-            <FaTrash className='icons-create' onClick={() => deleteTask(index)} />
-          </div>
-        ))}
+      {todoList.map((task, index) => (
+  <div className='List' key={index}>
+    {editIndex === index ? (
+      <>
+        <input
+          className='input-edit'
+          value={task}
+          onChange={(e) => editTask(index, e.target.value)}
+        />
+        <button onClick={() => saveEditing(index, task)}>Save</button>
+        <button onClick={cancelEditing}>Cancel</button>
+      </>
+    ) : (
+      <>
+        {task}
+        <FaPen className='icons-create' onClick={() => startEditing(index)} />
+        <FaTrash className='icons-create' onClick={() => deleteTask(index)} />
+      </>
+    )}
+  </div>
+))}
       </div>
     </div>
   );
