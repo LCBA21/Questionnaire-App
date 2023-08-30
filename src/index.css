@@ -6,7 +6,7 @@ body {
 .slider-container{
   background-color:  #4a3a3a;
   width: 25%;
-  height: 669px;
+  height: 804px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -53,9 +53,9 @@ body {
 .input-question{
   position: absolute;
   margin-left: 174px;
-  margin-top: 59px;
-  width: 530px;
-  height: 31px;
+  margin-top: 184px;
+  width: 529px;
+  height: 43px;
   left: 409px;
   top: 79px;
   background: #FFFFFF;
@@ -97,10 +97,14 @@ body {
 }
 
 .btn-Add{
+ 
+  position: absolute;
   width: 102px;
-  height: 22px;
+  height: 21px;
   background-color: #d4c9c9;
   border-radius: 5px;
+  top: 130px;
+
 } 
 
 .List{
@@ -112,7 +116,7 @@ body {
   overflow: hidden;
   height: 14px;
   margin-bottom: 27px;
-  margin-left: -265px;
+  margin-left: -195px;
 }
 
 
@@ -165,7 +169,60 @@ body {
   height: 201px;
 }
 
+.input-edit{
+  background-color: #d4c9c9;
+  border: none;
+  text-decoration: none;
+  overflow: hidden;
+}
 
+.btn-save-edit{
+background-color: #d4c9c9;
+}
+
+.btn-cancel-edit{
+  background-color: #d4c9c9;
+}
+
+.resize-logo{
+  position: absolute;
+  width: 8%;
+  height: 83px;
+  top: 2px;
+  left: 91px;
+}
+
+.div-stats-total{
+  position: absolute;
+  left: 771px;
+  top: 735px;
+}
+
+.flex-dashboard{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.div-stats-agree{
+  position: absolute;
+  left: 711px;
+  top: 784px;
+}
+
+.div-stats-disagree{
+  position: absolute;
+  top: 884px;
+  left: 722px;
+}
+
+
+.div-stats-neutral{
+  position: absolute;
+  top: 833px;
+  left: 722px;
+}
+ 
 
 /* 
 .logo1{
@@ -182,5 +239,3 @@ font-weight: 900;
   color: #FFFFFF;
   font-weight: 900;
 } */
-
-
