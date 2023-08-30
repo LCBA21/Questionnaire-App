@@ -18,12 +18,23 @@ const Questionnaire = ({ todoList }) => {
     }
   }, []);
 
+  //radio buttons event start
   const handleRadioChange = (index, value) => {
-    setRadioValues((prevValues) => ({
-      ...prevValues,
-      [index]: value,
-    }));
+    setRadioValues((prevValues) => {
+      const updatedValues = { ...prevValues };
+  
+      if (updatedValues[index] === value) {
+        updatedValues[index] = null; 
+      } else {
+        updatedValues[index] = value;
+      }
+  
+      return updatedValues;
+    });
   };
+    //radio buttons event end
+
+  
 
   const handleSubmit = () => {
     const radioWithQuestions = todoList.map((task, index) => ({
@@ -46,36 +57,43 @@ const Questionnaire = ({ todoList }) => {
               {task}
 
               <div className='radio-inline'>
-                <label>
-                  <input
-                    type='radio'
-                    name={`optradio-${index}`}
-                    checked={radioValues[index] === 'agree'}
-                    onChange={() => handleRadioChange(index, 'agree')}
-                  />
-                  Agree
-                </label>
+              <label>
+                <input
+                  type='radio'
+                  name={`optradio-${index}`}
+                  checked={radioValues[index] === 'agree'}
+                  onChange={() => handleRadioChange(index, 'agree')}
+                />
+                Agree 
+                
+                {/* value of number of clicks/increment ({radioValues['agree'] || 0}) */}
+              </label>
 
-                <label>
-                  <input
-                    type='radio'
-                    name={`optradio-${index}`}
-                    checked={radioValues[index] === 'neutral'}
-                    onChange={() => handleRadioChange(index, 'neutral')}
-                  />
-                  Neutral
-                </label>
+              <label>
+                <input
+                  type='radio'
+                  name={`optradio-${index}`}
+                  checked={radioValues[index] === 'neutral'}
+                  onChange={() => handleRadioChange(index, 'neutral')}
+                />
+                Neutral 
+                
+                {/* value of number of clicks/increment ({radioValues['neutral'] || 0}) */}
+              </label>
 
-                <label>
-                  <input
-                    type='radio'
-                    name={`optradio-${index}`}
-                    checked={radioValues[index] === 'disagree'}
-                    onChange={() => handleRadioChange(index, 'disagree')}
-                  />
-                  Disagree
-                </label>
-              </div>
+              <label>
+                <input
+                  type='radio'
+                  name={`optradio-${index}`}
+                  checked={radioValues[index] === 'disagree'}
+                  onChange={() => handleRadioChange(index, 'disagree')}
+                />
+                Disagree 
+                
+                {/*value of number of clicks/increment ({radioValues['disagree'] || 0}) */}
+              </label>
+          </div>
+
             </div>
           ))}
         </div>
