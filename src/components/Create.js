@@ -32,10 +32,11 @@ const Create = ({ todoList, setTodoList }) => {
   const deleteTask = (index) => {
     const updatedTodoList = todoList.filter((_, i) => i !== index);
     setTodoList(updatedTodoList);
+    console.log(index);
   };
+
   
 // edit start
-
   const startEditing = (index) => {
     setEditIndex(index);
   };
@@ -87,8 +88,8 @@ const Create = ({ todoList, setTodoList }) => {
           value={task}
           onChange={(e) => editTask(index, e.target.value)}
         />
-        <button onClick={() => saveEditing(index, task)}>Save</button>
-        <button onClick={cancelEditing}>Cancel</button>
+        <button className='btn-save-edit' onClick={() => saveEditing(index, task)}>Save</button>
+        <button className='btn-cancel-edit' onClick={cancelEditing}>Cancel</button>
       </>
     ) : (
       <>
@@ -98,7 +99,7 @@ const Create = ({ todoList, setTodoList }) => {
       </>
     )}
   </div>
-))}
+    ))}
       </div>
     </div>
   );
