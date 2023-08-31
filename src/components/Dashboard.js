@@ -25,11 +25,7 @@ const Dashboard = ({ todoList,agreenum, disagreenum, neutralnum }) => {
 
           <div className='stats-total'>
           <div className='text-container-total'>Total</div>
-          {todoList.map((task, index) => (
-          <div className='List' key={index}>
-              {todoList.length}
-          </div>
-            ))}
+          <div className='text-size-total'>{todoList.length}</div>
           </div>
 
       </div>
