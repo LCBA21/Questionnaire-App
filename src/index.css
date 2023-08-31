@@ -23,13 +23,12 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
-.logo{
 
+.logo{
   background-image: url('/src/components/OfficialLogo.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
 }
 
 .create-container{
@@ -158,6 +157,18 @@ body {
   margin-left: -195px;
 }
 
+.List-total{
+  background-color: var(--quaternary_color);
+  padding: 1.2em 5em;
+  border-radius: 5px;
+  width: 511px;
+  cursor: pointer;
+  overflow: hidden;
+  height: 1000px;
+  margin-bottom: -27px;
+  margin-left: -195px;
+}
+
 
 .div-btn-add{
   position: absolute;
@@ -258,7 +269,7 @@ border-radius: 16px;
   height: 47px;
   padding-left: 10px;
   margin-left: -41px;
-  margin-top: -173px;
+  margin-top: -56px;
   text-align: center;
 }
 
@@ -270,7 +281,12 @@ border-radius: 16px;
 
 .text-size-neutral{
   font-size: 58px;
-  height: 170px;
+  height: 145px;
+}
+
+.text-size-total{
+  font-size: 58px;
+  height: 58px;
 }
 
 .input-edit{
