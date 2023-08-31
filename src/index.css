@@ -1,3 +1,7 @@
+*{
+text-decoration: none;
+
+}
 body {
   margin: 0;
   font-family: 'Inter';
@@ -38,17 +42,44 @@ body {
   border-radius: 11px;
   width: 101px;
   height: 38px;
-  background-color: #d4c9c9;
+  background-color: #4a3a3a;
   margin-left: 97px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Inter';
+  font-size: 30px;
+  color: #FFFFFF;
+
 }
 
 .icons-slider{
   color: #000000;
-  width: 32px;
-  height: 39px;
-  margin-left: 66px;
-  margin-bottom: -43px;
+  width: 56px;
+  height: 50px;
+  margin-left: 38px;
+  margin-bottom: -80px;
 }
+
+.text-dashboard-container{
+  position: absolute;
+  top: 176px;
+  left: 11px;
+}
+
+.text-questionnaire-container{
+  position: absolute;
+  top: 296px;
+  left: 11px;
+}
+
+.text-create-container{
+  position: absolute;
+  top: 410px;
+  left: 11px;
+}
+
+
+
 
 .input-question{
   position: absolute;
@@ -167,6 +198,60 @@ body {
   cursor: pointer;
   overflow: hidden;
   height: 201px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Inter';
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.text-container-agree{
+  border-radius: 16px;
+  background-color: #4a3a3a;
+  width: 144px;
+  height: 47px;
+  padding-left: 47px;
+  margin-left: -52px;
+  margin-top: -42px;
+}
+
+.text-container-disagree{
+border-radius: 16px;
+  background-color: #4a3a3a;
+  width: 144px;
+  height: 47px;
+  padding-left: 47px;
+  margin-left: -52px;
+  margin-top: -42px;  
+}
+
+.text-neutral-position{
+  margin-left: 10px;
+
+}
+
+.text-container-neutral{
+  border-radius: 16px;
+  background-color: #4a3a3a;
+  width: 144px;
+  height: 47px;
+  padding-left: 10px;
+  margin-left: -41px;
+  margin-top: -15px;
+  text-align: center;
+}
+
+.text-size-count{
+  font-size: 58px;
+  height: 16px;
+  margin-left: 31px;
+}
+
+.text-size-neutral{
+  font-size: 58px;
+  height: 170px;
+
 }
 
 .input-edit{
