@@ -21,6 +21,7 @@ function App() {
             path='/'
             element={
               <Dashboard
+              todoList={todoList}
                 agreenum={agreenum}
                 disagreenum={disagreenum}
                 neutralnum={neutralnum}
