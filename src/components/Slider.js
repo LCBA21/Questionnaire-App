@@ -16,36 +16,45 @@ const Slider = () => {
       <div className='slider-container'>
       <img className='resize-logo' src={logo}/>
 
-         
-        <Link to={`/`}>
+          <div className='text-dashboard-container'>
+          <Link to={`/`}>
           <div>
           <FaClipboard className='icons-slider'/>
           </div>
 
           <div>
-          <button className='btn-slider'>Dashboard</button>
+          <p className='btn-slider'>Dashboard</p>
           </div>
         </Link>
-
+          </div>
+         
+      
+        <div className='text-questionnaire-container'>
         <Link to={`/question`}>
           <div>
           <FaQuestionCircle className='icons-slider'/>
           </div>
 
           <div>
-          <button className='btn-slider'>Questionnaire</button>
+          <p className='btn-slider'>Questionnaire</p>
           </div>
         </Link>
-
-        <Link to={'/create'}>
+        </div>
+     
+          <div className='text-create-container'>
+          <Link to={'/create'}>
           <div>
           <FaPlusSquare className='icons-slider'/>
           </div>
 
           <div>
-          <button className='btn-slider'>Create</button>
+          <p className='btn-slider'>Create</p>
           </div>
         </Link>
+          </div>
+      
+
+
       </div>
     </div>
   );
